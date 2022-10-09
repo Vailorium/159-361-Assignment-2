@@ -1,0 +1,26 @@
+{
+  "subFolders": {
+    "C:": {
+      "subFolders": {
+        "files": {
+          "subFolders": {
+
+          },
+          "files": {
+            "test.txt": {
+              "content": "help me"
+            }
+          }
+        }
+      },
+      "files": {
+        "README.txt": {
+          "content": "\u0029\u0016\u0008\u000a\u000e\u0053\u0013\u0009\u0013\u001f\u0000"
+        }
+      }
+    }
+  },
+  "files": {
+
+  }
+}
