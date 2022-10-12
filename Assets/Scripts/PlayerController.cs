@@ -64,8 +64,8 @@ public class PlayerController : MonoBehaviour
     void FindInteractable()
     {
         RaycastHit hit;
-        
-        if(Physics.Raycast(transform.position, transform.forward, out hit, interactReach))
+
+        if(Physics.Raycast(transform.position, mainCamera.transform.forward, out hit, interactReach))
         {
             Interactable interactableObject = hit.transform.GetComponent<Interactable>();
 
