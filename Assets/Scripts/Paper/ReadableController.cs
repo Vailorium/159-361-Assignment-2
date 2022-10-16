@@ -8,17 +8,11 @@ public class ReadableController : MonoBehaviour, Interactable
     [SerializeField] Canvas childCanvas;
     [SerializeField] PlayerController pController;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    public void interact(GameObject obj = null)
+    public void interact(PlayerController pC, GameObject obj = null)
     {
         childCanvas.gameObject.SetActive(true);
-        pController.movementEnabled = false;
-        pController.enableCursor();
+        pC.movementEnabled = false;
+        pC.enableCursor();
     }
 
     public void close()

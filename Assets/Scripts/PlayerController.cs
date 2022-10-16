@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Camera mainCamera;
 
+    public ChessPiece selectedPiece = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
         {
             if (interactTarget != null)
             {
-                interactTarget.interact(gameObject);
+                interactTarget.interact(this, gameObject);
             }
         }
     }
@@ -79,11 +81,13 @@ public class PlayerController : MonoBehaviour
             {
                 interactPanel.SetActive(false);
                 interactPromptVisible = false;
+                interactTarget = null;
             }
         } else if (interactPromptVisible == true)
         {
             interactPanel.SetActive(false);
             interactPromptVisible = false;
+            interactTarget = null;
         }
     }
 

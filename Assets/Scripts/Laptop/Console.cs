@@ -149,7 +149,6 @@ class Console
         List<ConsoleLine> returnLines = new List<ConsoleLine>();
         if (args.Length > 0)
         {
-            Debug.Log(args[0]);
             switch (args[0].Trim())
             {
                 case "help":
@@ -169,7 +168,6 @@ class Console
                         {
                             string content = fileSystem.getFromPath().files[filename].content;
                             string decrypted = ConsoleUtilities.decryptText(key, content);
-                            Debug.Log(decrypted);
                             returnLines.Add(new ConsoleLine("Decrypted Content:"));
                             returnLines.Add(new ConsoleLine(ConsoleUtilities.parseString(decrypted)));
                             break;
@@ -241,8 +239,6 @@ class Console
 
     public void addEditableLine()
     {
-        Debug.Log(this.fileSystem.getPathString());
-        Debug.Log(this.fileSystem.currentPath.Count);
         this.addLine(this.fileSystem.getPathString() + ">", "");
     }
 }

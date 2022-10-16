@@ -19,7 +19,7 @@ public class LaptopController : MonoBehaviour, Interactable
     /// <summary>
     /// Open terminal panel
     /// </summary>
-    public void interact(GameObject obj)
+    public void interact(PlayerController pC, GameObject obj)
     {
         consoleCanvas.SetActive(true);
         pController.movementEnabled = false;
