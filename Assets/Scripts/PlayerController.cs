@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
             Vector3 currentRot = characterController.transform.rotation.eulerAngles;
 
-            mainCamera.transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y") * 10, Space.World);
+            mainCamera.transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y") * 10, Space.Self);
             mainCamera.transform.rotation = Quaternion.Euler(mainCamera.transform.rotation.eulerAngles.x, currentRot.y, 0);
 
             Vector3 direction = new Vector3(horizontal, 0, vertical);
