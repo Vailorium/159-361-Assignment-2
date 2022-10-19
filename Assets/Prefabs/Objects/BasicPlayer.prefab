@@ -196,6 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44513b6fa2742f147b949f9380005f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementEnabled: 1
+  interactPanel: {fileID: 0}
+  mainCamera: {fileID: 0}
+  selectedPiece: {fileID: 0}
 --- !u!143 &3244638687316453330
 CharacterController:
   m_ObjectHideFlags: 0
