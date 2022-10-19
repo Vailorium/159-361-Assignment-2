@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class Keypad : MonoBehaviour
 {
+    public UnityEvent OnEntryAllowed;
     public string password = "9090";
     public bool success = false;
     public TextMeshPro screen;
     public int charLimit = 6;
+
+    public AudioClip clickSound;
+    public AudioClip invalidSound;
+    public AudioClip validSound;
+    AudioSource audioSource;
 
     private string userInput = "";
 
@@ -16,6 +23,7 @@ public class Keypad : MonoBehaviour
     private void Start()
     {
         userInput = "";
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void ButtonClicked(string keyPress) 
@@ -26,6 +34,7 @@ public class Keypad : MonoBehaviour
             {
                 screen.SetText("Invalid");
                 userInput = "";
+                audioSource.PlayOneShot(invalidSound);
             } else 
             {
                 if(keyPress == "*" || keyPress == "#")
@@ -34,13 +43,17 @@ public class Keypad : MonoBehaviour
                     {
                         success = true;
                         screen.SetText("Correct");
+                        audioSource.PlayOneShot(validSound);
+                        OnEntryAllowed.Invoke();
                     } else 
                     {
                         screen.SetText("Invalid");
                         userInput = "";
+                        audioSource.PlayOneShot(invalidSound);
                     }
                 } else {
                     screen.SetText(userInput);
+                    audioSource.PlayOneShot(clickSound);
                 }
             }
         }
