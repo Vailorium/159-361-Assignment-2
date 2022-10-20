@@ -56,6 +56,10 @@ public class PlayerController : MonoBehaviour
 
             characterController.Move(transform.rotation * direction * speed);
             transform.position.Set(transform.position.x, yOrig, transform.position.z);
+            
+            if (transform.position.y > (yOrig*1.1)) {
+                transform.position = new Vector3(transform.position.x, yOrig, transform.position.z);
+            }
         }
         FindInteractable();
     }
