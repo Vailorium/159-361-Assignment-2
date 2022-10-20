@@ -3251,9 +3251,9 @@ MonoBehaviour:
   success: 0
   screen: {fileID: 1658974090098226222}
   charLimit: 6
-  clickSound: {fileID: 8300000, guid: 584dfa6b68262024ba33ced372f52c87, type: 3}
-  invalidSound: {fileID: 8300000, guid: e1b01929e1f31f345808a9e61a8721fa, type: 3}
-  validSound: {fileID: 8300000, guid: 3b078546eaedf104a979548d54555934, type: 3}
+  clickSound: {fileID: 8300000, guid: 357f723409cc9594d9d939e910e710d4, type: 3}
+  invalidSound: {fileID: 8300000, guid: b4a5a999df0f8e444b6e9c1b9dace7c7, type: 3}
+  validSound: {fileID: 8300000, guid: 91f83276bc66a6844b4822396b751313, type: 3}
 --- !u!82 &1658974090574652553
 AudioSource:
   m_ObjectHideFlags: 0
