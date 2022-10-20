@@ -129,7 +129,7 @@ class Console
         commands.Add(new ConsoleLine("help: Displays usable commands"));
         commands.Add(new ConsoleLine("decrypt <key> <filename>: Decrypts file and displays contents"));
         commands.Add(new ConsoleLine("ls: Displays files and sub-folders in current folder"));
-        commands.Add(new ConsoleLine("read: Reads file contents"));
+        commands.Add(new ConsoleLine("read <filename>: Reads file contents"));
         commands.Add(new ConsoleLine("cd <path>: paths to directory"));
         return commands;
     }

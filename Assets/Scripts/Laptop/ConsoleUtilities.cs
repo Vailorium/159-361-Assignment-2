@@ -19,7 +19,7 @@ class ConsoleUtilities
         string output = "";
         foreach (char c in st)
         {
-            if (consoleFont.HasCharacter(c))
+            if (consoleFont.HasCharacter(c) || c == '\n')
             {
                 output += c;
             }
