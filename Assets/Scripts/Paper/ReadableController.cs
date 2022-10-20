@@ -17,6 +17,7 @@ public class ReadableController : MonoBehaviour, Interactable
 
     public void close()
     {
+        Debug.Log("Hello world!");
         childCanvas.gameObject.SetActive(false);
         pController.movementEnabled = true;
         pController.disableCursor();

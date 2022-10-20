@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     private CharacterController characterController;
-    private float speed = 0.05f;
+    private float speed = 0.08f;
 
     public bool movementEnabled = true;
 
@@ -20,10 +20,14 @@ public class PlayerController : MonoBehaviour
 
     public ChessPiece selectedPiece = null;
 
+    private float yOrig;
+
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+
+        yOrig = transform.position.y;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -48,28 +52,24 @@ public class PlayerController : MonoBehaviour
             float vertical = Input.GetAxis("Vertical");
             float horizontal = Input.GetAxis("Horizontal");
 
-
-            /*characterController.transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * 10, Space.World);
-
-            Vector3 currentRot = characterController.transform.rotation.eulerAngles;
-
-            mainCamera.transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y") * 10, Space.Self);
-            // mainCamera.transform.rotation = Quaternion.Euler(mainCamera.transform.rotation.eulerAngles.x, currentRot.y, 0);*/
-
             Vector3 direction = new Vector3(horizontal, 0, vertical);
 
             characterController.Move(transform.rotation * direction * speed);
+            transform.position.Set(transform.position.x, yOrig, transform.position.z);
         }
         FindInteractable();
     }
 
     private void LateUpdate()
     {
-        characterController.transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * 3, Space.World);
+        if (movementEnabled)
+        {
+            characterController.transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * 3, Space.World);
 
-        Vector3 currentRot = characterController.transform.rotation.eulerAngles;
+            Vector3 currentRot = characterController.transform.rotation.eulerAngles;
 
-        mainCamera.transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y") * 3, Space.Self);
+            mainCamera.transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y") * 3, Space.Self);
+        }
     }
 
     void FindInteractable()

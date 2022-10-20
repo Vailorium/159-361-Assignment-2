@@ -7,15 +7,15 @@
 
           },
           "files": {
-            "test.txt": {
-              "content": "help me"
+            "keytosafe.txt": {
+              "content": "\u0022\u000d\u0017\u0059\u0010\u000a\u0007\u0017\u0045\u0012\u0004\u0017\u0059\u0002\u000d\u0017\u0059\u0000\u0004\u0005\u0017\u0045\u001d\u0018\u0045\u0018\u0005\u0045\u0014\u0016\u001f\u0009\u000c\u0005\u0016\u004e\u004b\u0051\u004b\u004f\u0053"
             }
           }
         }
       },
       "files": {
-        "README.txt": {
-          "content": "\u0029\u0016\u0008\u000a\u000e\u0053\u0013\u0009\u0013\u001f\u0000"
+        "texting.txt": {
+          "content": "Remember olds phones and how you had to type things out on a keypad?\nLike how, for example, the word Yes you would have to write 999337777?\nA lot of keypads don't have those keys anymore, so I've added them here for reference.\n2 - A B C\n3 - D E F\n4 - G H I\n5 - J K L\n6 - M N O\n7 - P Q R S\n8 - T U V\n9 - W X Y Z"
         }
       }
     }
