@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
             mainCamera.transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y") * 3, Space.Self);
 
             Vector3 rot = mainCamera.transform.localEulerAngles;
-            Debug.Log(rot.x);
 
             if(rot.x > 60 && rot.x < 270)
             {
