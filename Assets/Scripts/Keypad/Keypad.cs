@@ -28,8 +28,11 @@ public class Keypad : MonoBehaviour
 
     public void ButtonClicked(string keyPress) 
     {
+        // if keypad hasn't already been completed
         if (!success) {
             userInput += keyPress;
+
+            // If keypad has gone past char limit, reset and display invalid
             if(userInput.Length > charLimit && keyPress != "*" && keyPress != "#") 
             {
                 screen.SetText("Invalid");
@@ -37,6 +40,7 @@ public class Keypad : MonoBehaviour
                 audioSource.PlayOneShot(invalidSound);
             } else 
             {
+                // if user has entered code, verify if its correct or not
                 if(keyPress == "*" || keyPress == "#")
                 {
                     if(userInput == (password + keyPress))
@@ -52,6 +56,7 @@ public class Keypad : MonoBehaviour
                         audioSource.PlayOneShot(invalidSound);
                     }
                 } else {
+                    // otherwise add character to code
                     screen.SetText(userInput);
                     audioSource.PlayOneShot(clickSound);
                 }
