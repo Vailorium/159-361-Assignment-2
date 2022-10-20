@@ -30,7 +30,7 @@ public class Keypad : MonoBehaviour
     {
         if (!success) {
             userInput += keyPress;
-            if(userInput.Length >= charLimit) 
+            if(userInput.Length > charLimit && keyPress != "*" && keyPress != "#") 
             {
                 screen.SetText("Invalid");
                 userInput = "";
