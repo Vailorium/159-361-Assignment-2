@@ -27,12 +27,6 @@ public class ChessTile : MonoBehaviour, Interactable
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void interact(PlayerController pC, GameObject obj = null)
     {
         // move piece to this tile

@@ -8,6 +8,7 @@ public class ChessBoard
 
     public ChessBoard(ChessPiece[] pieces)
     {
+        // create board and place pieces on board
         board = new List<List<ChessPiece>>(8);
 
         for(int i = 0; i < 8; i++)

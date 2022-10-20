@@ -26,6 +26,7 @@ public class ChessGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // hide hidden panel
         hiddenPanel.SetActive(false);
         _hiddenPanel = hiddenPanel;
         solutionPosition = 0;

@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
             characterController.Move(transform.rotation * direction * speed);
             transform.position.Set(transform.position.x, yOrig, transform.position.z);
             
+            // force set character y-level (avoids collision bugs)
             if (transform.position.y > (yOrig*1.1)) {
                 transform.position = new Vector3(transform.position.x, yOrig, transform.position.z);
             }
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
 
             Vector3 rot = mainCamera.transform.localEulerAngles;
 
+            // fix rotation to 50deg up, 60 deg down
             if(rot.x > 60 && rot.x < 270)
             {
                 mainCamera.transform.localEulerAngles = new Vector3(60f, 0f, 0f);
@@ -89,10 +91,13 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        // raycast from camera
         if(Physics.Raycast(ray, out hit, interactReach))
         {
+            // find hit object
             Interactable interactableObject = hit.transform.GetComponent<Interactable>();
 
+            // if an object has been hit, show panel
             if (interactableObject != null)
             {
                 interactPanel.SetActive(true);
@@ -101,12 +106,14 @@ public class PlayerController : MonoBehaviour
             }
             else if (interactPromptVisible == true)
             {
+                // otherwise hide panel
                 interactPanel.SetActive(false);
                 interactPromptVisible = false;
                 interactTarget = null;
             }
         } else if (interactPromptVisible == true)
         {
+            // hide panel if raycast didn't work
             interactPanel.SetActive(false);
             interactPromptVisible = false;
             interactTarget = null;
@@ -115,14 +122,12 @@ public class PlayerController : MonoBehaviour
 
     public void disableCursor()
     {
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     public void enableCursor()
     {
-
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
